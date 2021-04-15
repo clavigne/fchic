@@ -22,7 +22,7 @@ grammar. You'll need to do your own data processing from its outputs.
 
 ## Usage
 
-fchic consists of four functions:
+fchic consists of two functions:
 
   * `fchic.load(fp)` transform a formatted checkpoint file in from a file-like
     object `fp` into a python dictionary of decks.
