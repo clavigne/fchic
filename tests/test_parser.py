@@ -1,5 +1,5 @@
 """Test of the various bits of the parser."""
-# funsies
+# fchic
 from fchic.parser_definition import (
     char_arr_deck,
     deck,

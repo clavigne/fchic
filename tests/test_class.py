@@ -1,5 +1,5 @@
 """Test of the various bits of the parser."""
-# funsies
+# fchic
 import fchic
 
 

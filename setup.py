@@ -1,4 +1,4 @@
-"""Install funsies."""
+"""Install fchic."""
 import setuptools
 
 setuptools.setup(
