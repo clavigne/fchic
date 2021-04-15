@@ -104,3 +104,19 @@ def deck_load(inp: TextIO, name: str) -> Deck:
     if my_name.strip() != name.strip():
         raise RuntimeWarning(f"expected deck {name}, but got a deck named {my_name}")
     return _to_deck(group)
+
+
+# Version information
+# We grab it from setup.py so that we don't have to bump versions in multiple
+# places.
+try:
+    # std
+    from importlib import metadata
+
+    __version__ = metadata.version("fchic")
+except ImportError:
+    # Running on pre-3.8 Python; use importlib-metadata package
+    # external
+    import importlib_metadata
+
+    __version__ = importlib_metadata.version("fchic")

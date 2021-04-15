@@ -8,8 +8,11 @@ To use it, simply point it at a file and give it a deck to load, like so:
 import fchic
 
 with open("data.fchk", "r") as f:
-    out = fchic.deck_load(f, "Cartesian Force Constants")
+    out = fchic.deck_load(f, "Cartesian Gradient")
 ```
+
+`out` is now a list of `3 x N` floating point numbers parsed from the
+`Cartesian Gradient` section of `data.fchk`.
 
 **Note:** fchic does no data validation (beyond shape and type), no physical
 unit conversions and no integration into fancy data structures. It is entirely
@@ -17,7 +20,7 @@ a single page, simple [pyparsing](https://github.com/pyparsing/pyparsing/)
 grammar. You'll need to do your own data processing from its outputs.
 
 
-## Documentation
+## Usage
 
 fchic consists of four functions:
 
@@ -37,6 +40,12 @@ Decks are returned thinly parsed from the formatted checkpoint files:
 Python is not exactly fast, and neither is pyparsing, so you'll generally want
 to use `fchic.deck_load()` which does not have to parse the whole file, and is
 therefore way way 🐇 faster 🐇.
+
+## Installation
+
+```bash
+pip install fchic
+```
 
 ## License
 
