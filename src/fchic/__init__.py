@@ -1,8 +1,7 @@
 """fchic is a generic parser for Gaussian formatted checkpoint files."""
 # std
 from os import PathLike
-from typing import TextIO, Union, Dict, List
-
+from typing import Dict, List, TextIO, Union
 
 # module
 from .parser_definition import fchk
