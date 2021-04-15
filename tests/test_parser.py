@@ -2,12 +2,10 @@
 # funsies
 from fchic.parser_definition import (
     char_arr_deck,
-    cval_deck,
     deck,
     details,
     fchk,
     header,
-    int_arr_deck,
     integer,
     ival_deck,
     name_of_deck,

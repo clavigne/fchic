@@ -1,14 +1,19 @@
 """fchic is a generic parser for Gaussian formatted checkpoint files."""
 # std
-from os import PathLike
 from typing import Dict, List, TextIO, Union
+
+# external
+from pyparsing import ParseResults
 
 # module
 from .parser_definition import fchk
 
+FchkOut = Dict[str, Union[List[str], List[int], List[float]]]
 
-def _to_dict(inp: "result") -> Dict[str, Union[List[str], List[int], List[float]]]:
-    result = {}
+
+def _to_dict(inp: ParseResults) -> FchkOut:
+    """Parse a formatted check point into a dictionary."""
+    result: FchkOut = {}
     result["header"] = [
         "".join(inp["header"]["title"]),
         " ".join(inp["header"]["details"]),
@@ -46,9 +51,11 @@ def _to_dict(inp: "result") -> Dict[str, Union[List[str], List[int], List[float]
     return result
 
 
-def loads(inp: str):
+def loads(inp: str) -> FchkOut:
+    """Parse formatted checkpoint file from a string."""
     return _to_dict(fchk.parseString(inp))
 
 
-def load(inp: TextIO):
+def load(inp: TextIO) -> FchkOut:
+    """Parse formatted checkpoint file from a filelike object."""
     return _to_dict(fchk.parseString(inp.read()))

@@ -8,6 +8,7 @@ nox.options.sessions = "fmt", "lint", "tests", "mypy"  # default session
 locations = "src", "tests", "noxfile.py"  # Linting locations
 pyversions = ["3.7", "3.8", "3.9"]
 
+
 # Testing
 @nox.session(python=pyversions)
 def tests(session: Session) -> None:

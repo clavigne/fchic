@@ -23,10 +23,12 @@ Nuclear charges                            R   N=          12
   1.00000000E+00  1.00000000E+00
 """
     result = fchic.loads(ex_full)
+    assert len(result["Nuclear charges"]) == 12
 
 
 def test_read_file() -> None:
     """Test reading a fchk file."""
     with open("tests/data/data-trunc.fchk", "r") as f:
         result = fchic.load(f)
+
     assert len(result["Alpha Orbital Energies"]) == 102

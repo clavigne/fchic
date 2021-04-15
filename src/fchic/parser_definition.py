@@ -1,9 +1,7 @@
 """fchic is a generic parser for Gaussian formatted checkpoint files."""
 # external
 from pyparsing import (
-    alphanums,
     Combine,
-    Forward,
     Group,
     LineEnd,
     LineStart,
@@ -16,7 +14,6 @@ from pyparsing import (
     SkipTo,
     StringEnd,
     StringStart,
-    Suppress,
     White,
     Word,
 )
