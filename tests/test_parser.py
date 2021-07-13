@@ -66,7 +66,7 @@ Route                                      C   N=           7
 # Geom=AllCheck Guess=Read SCRF=Check GenChk B3LYP/6-31G(d) 
 Symm=None Freq=(NoRaman)
 Nuclear charges                            R   N=          12
-  6.00000000E+00  6.00000000E+00  6.00000000E+00  6.00000000E+00  6.00000000E+00
+  6.00000000E+01  6.00000000D-01  -6.00000E-01  6.00000000E+00  6.00000000E+00
   6.00000000E+00  1.00000000E+00  1.00000000E+00  1.00000000E+00  1.00000000E+00
   1.00000000E+00  1.00000000E+00
 Virial Ratio                               R      2.010118722531438E+00
@@ -89,7 +89,9 @@ Virial Ratio                               R      2.010118722531438E+00
     assert "".join(result["value"]) == "\n".join(example_decks.splitlines()[2:4])
 
     result = real_arr_deck.parseString("\n".join(example_decks.splitlines()[4:-1]))
-    assert float(result.value[0]) == 6.0
+    assert float(result.value[0]) == 60.0
+    assert float(result.value[1]) == 0.6
+    assert float(result.value[2]) == -0.6
     assert float(result.value[7]) == 1.0
 
     # Test reading all decks

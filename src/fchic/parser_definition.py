@@ -32,7 +32,7 @@ fp = Word(nums + "-+.")  # fp
 
 # fortran real
 exp = oneOf("E e D d")
-real = Combine(fp("base") + exp + integer("exponent"))
+real = Combine(fp("base") + exp.setParseAction(lambda x: "e") + integer("exponent"))
 
 # C type
 char = Word(printables)
