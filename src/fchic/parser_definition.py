@@ -28,7 +28,7 @@ ParserElement.setDefaultWhitespaceChars(" \t")  # use significant newlines
 integer = Word(nums + "+-")  # integer
 
 # floating point
-fp = Word(nums + "-+.")  # fp
+fp = Combine(Word(nums + "+-") + Literal(".") + Word(nums))
 
 # fortran real
 exp = oneOf("E e D d")

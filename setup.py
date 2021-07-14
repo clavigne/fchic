@@ -10,7 +10,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 setuptools.setup(
     name="fchic",
-    version="0.1.0",
+    version="0.1.1",
     author="Cyrille Lavigne",
     author_email="cyrille.lavigne@mail.utoronto.ca",
     description="fchic is a minimal parser for Gaussian 16 formatted checkpoint files.",
